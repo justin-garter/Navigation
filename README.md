@@ -1,2 +1,7 @@
-# pi-webserver-ansible 
+### [pi-webserver-ansible](https://github.com/justin-garter/pi-webserver-ansible)
+
 This is the infrastructure behind [justingarter.com](https://justingarter.com): a Raspberry Pi 5 serving a static site from an isolated DMZ VLAN, fronted by Cloudflare, hardened with a hand-written nftables ruleset and fail2ban, and reachable for management only over WireGuard with no LAN-side fallback. The host is codified as an Ansible playbook with vaulted secrets. The repo carries the operational documentation alongside it: how to deploy content, rebuild the host from a blank disk, verify it does what it claims, make changes without locking yourself out, and recover when you do. Every claim in the documentation was tested rather than assumed, including the rebuild, and the README records where the playbook falls short of reproducing a working host on its own.
+
+### [minecraft-pi-infrastructure](https://github.com/justin-garter/minecraft-pi-infrastructure)
+
+A modded Minecraft server on a Raspberry Pi 5, run as an internet-facing DMZ appliance rather than a hobby box. The host is VLAN-segmented from the LAN, firewalled default-deny with a single public port, administered only over WireGuard, and fully reproducible from version-controlled cloud-init. Alongside the configuration are operational runbooks for restore, modpack updates, hardening audits and a full rebuild, plus a decision log recording why each choice was made and how it was verified. The organising principle is that configuration is a claim and only a test is evidence — network isolation, external exposure, and the backups have each been proven by tests designed to fail. Network values are sanitized placeholders.
